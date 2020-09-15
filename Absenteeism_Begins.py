@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
 import pandas as pd
 import numpy as np
 
@@ -46,8 +43,7 @@ df_preprocessed['Excessive_Absenteeism'].sum() / df_preprocessed.shape[0]
 # In[25]:
 
 
-data_with_target = df_preprocessed.drop('Absenteeism Time in Hours', axis=1)
-
+data_with_target = df_preprocessed.drop(['ID', 'Date','Absenteeism Time in Hours'], axis=1)
 
 # In[26]:
 
