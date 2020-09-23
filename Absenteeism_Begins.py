@@ -8,14 +8,13 @@ pd.options.display.max_columns = None
 pd.options.display.max_rows = None
 df_preprocessed = pd.read_csv('C:/Users/abey.assefa/AbeyML/csv_Only/Absenteeism_data.csv')
 
-# ### Create target
+#### Create target
 df_preprocessed['Absenteeism Time in Hours'].median()
 df_preprocessed['Excessive_Absenteeism'] = np.where(df_preprocessed['Absenteeism Time in Hours'] > 
                                     df_preprocessed['Absenteeism Time in Hours'].median(), 1, 0)
 
 ## check balace of data
 df_preprocessed['Excessive_Absenteeism'].sum() / df_preprocessed.shape[0]
-
 data_with_target = df_preprocessed.drop(['ID', 'Date','Absenteeism Time in Hours'],axis=1)
 # check data is filtered
 data_with_target is df_preprocessed
